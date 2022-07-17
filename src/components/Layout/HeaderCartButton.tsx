@@ -3,8 +3,12 @@ import CartIcon from "../Cart/CartIcon";
 // @ts-ignore
 import classes from "./HeaderCartButton.module.css";
 
+interface props {
 
-const HeaderCartButton = () => {
+}
+
+
+const HeaderCartButton: React.FC<props>= ({}) => {
 
     return (
         <>
