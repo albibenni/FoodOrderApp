@@ -1,6 +1,8 @@
 import React from "react";
 // @ts-ignore
 import classes from "./AvailableMeals.module.css"
+import Card from "../UI/Card";
+import MealItem from "./MealItem/MealItem";
 
 
 const DUMMY_MEALS = [
@@ -31,15 +33,18 @@ const DUMMY_MEALS = [
 ];
 
 const AvailableMeals = () => {
-const meals = DUMMY_MEALS.map((meal => <li>{meal.name}</li>))
-    return(
-      <section className={classes.meals}>
-          <ul>
-              {/*@ts-ignore*/}
-              {meals}
-          </ul>
-      </section>
+    const meals = DUMMY_MEALS.map((meal => <MealItem key={meal.id} mealName={meal.name} description={meal.description}
+                                                     price={meal.price}/>))
+    return (
+        <section className={classes.meals}>
+            <Card>
+                <ul>
+                    {/*@ts-ignore*/}
+                    {meals}
+                </ul>
+            </Card>
+        </section>
 
-  )
+    )
 }
 export default AvailableMeals;
